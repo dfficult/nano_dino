@@ -147,8 +147,6 @@ void scroll() {
       // generate a cacti (2,3,4)
       game[15] = 32;
       game[31] = (int)random(2) + 2;
-      gap = 0;
-      obstacle++;
     } else {
       genNextConsec = false;
       // generate a gap
@@ -156,6 +154,7 @@ void scroll() {
       game[31] = 32;
       gap++;
       obstacle = 0;
+      genNextConsec = false;
     }
 
   } else if (random(3) == 0 && gap >= minGapBetween) {
@@ -170,7 +169,7 @@ void scroll() {
       // 3 in 4 generate cacti (2,3,4)
       game[15] = 32;
       game[31] = (int)random(2) + 2;
-      genNextConsec = (random(obstacle + 3) == 0); // 1 in 3 generate a consecutive cacti
+      genNextConsec = (random(obstacle + 3) == 0); // 1 in 3 generate a consequtive cacti
     }
   
   } else {
